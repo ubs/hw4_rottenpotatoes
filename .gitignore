@@ -15,4 +15,5 @@ tmp/**/*
 .bundle
 *~
 *.rb~
+coverage/
 
