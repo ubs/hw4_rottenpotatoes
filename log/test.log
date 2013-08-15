@@ -3495,3 +3495,35 @@ Started GET "/movies" for 127.0.0.1 at 2013-08-14 19:16:40 -0700
   [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
 Rendered movies/index.html.haml within layouts/application (11.3ms)
 Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.2ms)
+  Processing by MoviesController#update as HTML
+  Parameters: {"movie"=>"#[RSpec::Mocks::Mock:0x553d392 @name=Movie(id: integer, title: string, rating: string, description: text, release_date: datetime, created_at: datetime, updated_at: datetime, director: string)]", "id"=>"1"}
+Redirected to http://test.host/movies/%23%5BRSpec::Mocks::Mock:0x553d392%20@name=Movie(id:%20integer,%20title:%20string,%20rating:%20string,%20description:%20text,%20release_date:%20datetime,%20created_at:%20datetime,%20updated_at:%20datetime,%20director:%20string)%5D
+Completed 302 Found in 1ms
+  Processing by MoviesController#update as HTML
+  Parameters: {"movie"=>"#[RSpec::Mocks::Mock:0x5aa12ca @name=Movie(id: integer, title: string, rating: string, description: text, release_date: datetime, created_at: datetime, updated_at: datetime, director: string)]", "id"=>"1"}
+Redirected to http://test.host/movies/%23%5BRSpec::Mocks::Mock:0x5aa12ca%20@name=Movie(id:%20integer,%20title:%20string,%20rating:%20string,%20description:%20text,%20release_date:%20datetime,%20created_at:%20datetime,%20updated_at:%20datetime,%20director:%20string)%5D
+Completed 302 Found in 1ms
+  Processing by MoviesController#update as HTML
+  Parameters: {"movie"=>"#[RSpec::Mocks::Mock:0x5927b06 @name=Movie(id: integer, title: string, rating: string, description: text, release_date: datetime, created_at: datetime, updated_at: datetime, director: string)]", "id"=>"1"}
+Redirected to http://test.host/movies/%23%5BRSpec::Mocks::Mock:0x5927b06%20@name=Movie(id:%20integer,%20title:%20string,%20rating:%20string,%20description:%20text,%20release_date:%20datetime,%20created_at:%20datetime,%20updated_at:%20datetime,%20director:%20string)%5D
+Completed 302 Found in 1ms
+  Processing by MoviesController#similar as HTML
+  Parameters: {"movie_id"=>"1"}
+Completed 200 OK in 120ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#similar as HTML
+  Parameters: {"movie_id"=>"1"}
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#similar as HTML
+  Parameters: {"movie_id"=>"1"}
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#similar as HTML
+  Parameters: {"movie_id"=>"1"}
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#similar as HTML
+  Parameters: {"movie_id"=>"1"}
+Redirected to http://test.host/movies
+Completed 302 Found in 1ms
+  Processing by MoviesController#similar as HTML
+  Parameters: {"movie_id"=>"1"}
+Redirected to http://test.host/movies
+Completed 302 Found in 1ms
