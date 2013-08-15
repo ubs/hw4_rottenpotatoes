@@ -8,6 +8,7 @@ end
 
 
 Then /^the director of "([^"]*)" should be "([^"]*)"$/ do |movie_title, movie_director|
-	
-   assert page.body =~ /#{movie_title}.+Director.+#{movie_director}/m
+  movie_details_html = find("div#main").text
+  assert movie_details_html.include? movie_title
+  assert movie_details_html.include? movie_director
 end
