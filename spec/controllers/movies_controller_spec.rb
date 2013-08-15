@@ -29,7 +29,6 @@ describe MoviesController do
   describe 'Movies With Same Director Happy Path' do
     before :each do
       @mock_movie = mock(Movie, :title => "Star Wars", :director => "director", :id => "1")
-
       Movie.stub!(:find).with("1").and_return(@mock_movie)
     end
 
@@ -62,8 +61,20 @@ describe MoviesController do
   end
 
   describe 'Movies With Same Director Sad Path' do
-    it 'should return to the movies page' do
-      pending 'Placeholder'
+    before :each do
+      @mock_movie = mock(Movie, :title => "Mooc Armando Movie", :director => nil, :id => "1")
+      Movie.stub!(:find).with("1").and_return(@mock_movie)
+    end
+
+    it 'should redirect to the movies page' do
+      get :similar, :movie_id => "1"
+      response.should redirect_to(movies_path)
+    end
+	
+    it 'should populate a flash message for the view' do
+      get :similar, :movie_id => "1"
+      flash[:notice].should_not be_blank
     end
   end
+
 end
